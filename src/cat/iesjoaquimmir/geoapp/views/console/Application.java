@@ -2,6 +2,8 @@ package cat.iesjoaquimmir.geoapp.views.console;
 
 
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Cercle;
+import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Color;
+import static cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Color.getRandom;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Esfera;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Rectangle;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Square;
@@ -32,7 +34,7 @@ public class Application {
         
         
         do {
-            System.out.printf("Introdueix una figura(0: Sortir, 1: Rectangle, 2: Square, 3: Cercle, 4: Sphere, 5: Rectangle 1 costat): ");
+            System.out.printf("Introdueix una figura(0: Sortir, 1: Rectangle, 2: Square, 3: Cercle, 4: Sphere, 5: Rectangle 1 costat, 6: Color aleatori): ");
             n = teclat.nextInt();
                         
             if(n==1){
@@ -53,8 +55,11 @@ public class Application {
         
             }else if(n==5){
                 rectangle1lado();
+            }else if(n==6){
+                color();
             }
-        }while(n>0 && n<6);
+        }while(n>0 && n<7);
+        
         
     }
     
@@ -138,6 +143,12 @@ public class Application {
         System.out.printf("El costat 2 de r1: %.2f %n", r1.getLado2());
         System.out.printf("L'Area de r1: %.2f %n", r1.getArea());
         System.out.printf("El perimetre de r1: %.2f %n", r1.getPerimeter());
+    }
+    
+    public static void color(){
+        Color color1 = getRandom();
+        
+        System.out.printf("Red: %d, Green: %d, Blue: %d \n", color1.getRed(), color1.getGreen(), color1.getBlue() );
     }
     
 }
