@@ -3,6 +3,7 @@ package cat.iesjoaquimmir.geoapp.views.console;
 
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Cercle;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Color;
+import static cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Color.fromHexString;
 import static cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Color.getRandom;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Esfera;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Rectangle;
@@ -31,10 +32,10 @@ public class Application {
                
         double n;
         Scanner teclat = new Scanner(System.in);
-        
+        int tipusColor;
         
         do {
-            System.out.printf("Introdueix una figura(0: Sortir, 1: Rectangle, 2: Square, 3: Cercle, 4: Sphere, 5: Rectangle 1 costat, 6: Color aleatori): ");
+            System.out.printf("Introdueix una figura(0: Sortir, 1: Rectangle, 2: Square, 3: Cercle, 4: Sphere, 5: Rectangle 1 costat, 6: Color): ");
             n = teclat.nextInt();
                         
             if(n==1){
@@ -56,7 +57,20 @@ public class Application {
             }else if(n==5){
                 rectangle1lado();
             }else if(n==6){
-                color();
+                
+                System.out.printf("Introduir color: 1, Introduir color hexadecimal: 2, Color aleatori: 3 | Opció: ");
+                
+                tipusColor = teclat.nextInt();
+                
+                if(tipusColor==1){
+                    color();
+                }else if(tipusColor==2){
+                    colorHex();
+                }else if(tipusColor==3){
+                    colorAleatori();
+                }
+                
+                
             }
         }while(n>0 && n<7);
         
@@ -146,9 +160,42 @@ public class Application {
     }
     
     public static void color(){
+        int red, green, blue;
+        
+        Scanner teclat = new Scanner(System.in);
+        
+        System.out.printf("Introdueix el red: ");
+        red = teclat.nextInt();
+        
+        System.out.printf("Introdueix el green: ");
+        green = teclat.nextInt();
+        
+        System.out.printf("Introdueix el blue: ");
+        blue = teclat.nextInt();
+        
+        Color color1 = new Color(red, green, blue);
+        
+        System.out.printf("\nEl Red: %d, el Green: %d, el Blue: %d \n", color1.getRed(), color1.getGreen(), color1.getBlue() );
+        
+    }
+    
+    public static void colorHex(){
+        String colorHexadecimal;
+
+        Scanner teclat = new Scanner(System.in);
+        
+        System.out.printf("Introdueix el color en hexadecimal: ");
+        colorHexadecimal = teclat.nextLine();
+        
+        Color color1 = fromHexString(colorHexadecimal);
+        
+        System.out.printf("\nEl Red: %d, el Green: %d, el Blue: %d \n", color1.getRed(), color1.getGreen(), color1.getBlue() );
+    }
+    
+    public static void colorAleatori(){
         Color color1 = getRandom();
         
-        System.out.printf("Red: %d, Green: %d, Blue: %d \n", color1.getRed(), color1.getGreen(), color1.getBlue() );
+        System.out.printf("\nRed: %d, Green: %d, Blue: %d \n", color1.getRed(), color1.getGreen(), color1.getBlue() );
     }
     
 }
