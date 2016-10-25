@@ -177,6 +177,7 @@ public class Application {
         
         System.out.printf("\nEl Red: %d, el Green: %d, el Blue: %d \n", color1.getRed(), color1.getGreen(), color1.getBlue() );
         
+        
     }
     
     public static void colorHex(){
@@ -190,12 +191,18 @@ public class Application {
         Color color1 = fromHexString(colorHexadecimal);
         
         System.out.printf("\nEl Red: %d, el Green: %d, el Blue: %d \n", color1.getRed(), color1.getGreen(), color1.getBlue() );
+        
+        System.out.printf("\nColor en hexadecimal: %s\n", color1.toRGBString(true));
+        System.out.printf("\nColor en hexadecimal: %s\n", color1.toRGBString());
     }
     
     public static void colorAleatori(){
         Color color1 = getRandom();
         
         System.out.printf("\nRed: %d, Green: %d, Blue: %d \n", color1.getRed(), color1.getGreen(), color1.getBlue() );
+        
+        System.out.printf("\nColor aleatori en hexadecimal: %s\n", color1.toHexString(false));
+        System.out.printf("\nColor aleatori en hexadecimal: %s\n", color1.toHexString());
     }
     
 }

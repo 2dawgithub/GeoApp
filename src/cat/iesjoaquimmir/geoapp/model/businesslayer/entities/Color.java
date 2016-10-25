@@ -108,8 +108,24 @@ public class Color {
         public static Color getRandom(){
             Random numrandom = new Random();
             
-            return new Color( numrandom.nextInt(256), numrandom.nextInt(256), numrandom.nextInt(256) );
+            return new Color( numrandom.nextInt(MAX_VALUE+1), numrandom.nextInt(MAX_VALUE+1), numrandom.nextInt(MAX_VALUE+1) );
             
+        }
+        
+        public String toHexString(boolean upper){
+            return String.format(upper ? "#%02X%02X%02X" : "#%02x%02x%02x", getRed(), getGreen(), getBlue());
+        }
+        
+        public String toHexString(){
+            return toHexString(true);
+        }
+        
+        public String toRGBString(boolean upper){
+            return String.format(upper ? "RGB(%d,%d,%d)" : "rgb(%d,%d,%d)", getRed(), getGreen(), getBlue());
+        }
+        
+        public String toRGBString(){
+            return toRGBString(false);
         }
         
         //</editor-fold>
