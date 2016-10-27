@@ -15,6 +15,8 @@ public class Rectangle {
     private double lado1;
     private double lado2 = 1.0;
     
+    public static final double LADO1_VALUE=1.0;
+    
     //</editor-fold>
     
     //<editor-fold defaultstate="collapsed" desc="Mètodes">
@@ -30,6 +32,10 @@ public class Rectangle {
         public Rectangle(double lado1){
             this.setLado1(lado1);
 
+        }
+        
+        public Rectangle(){
+            this(LADO1_VALUE);
         }
 
         //</editor-fold>

@@ -15,6 +15,8 @@ public class Square {
     
     private double side;
     
+    public static final double SIDE_VALUE=1.0;
+    
 //</editor-fold>
 
 //<editor-fold defaultstate="collapsed" desc="Comportament: Mètodes">
@@ -22,6 +24,9 @@ public class Square {
     //<editor-fold defaultstate="collapsed" desc="Constructores">
         public Square(double side){
             this.setSide(side);
+        }
+        public Square(){
+            this(SIDE_VALUE);
         }
     //</editor-fold>
 

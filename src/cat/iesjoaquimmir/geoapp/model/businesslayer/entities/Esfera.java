@@ -15,6 +15,8 @@ public class Esfera {
     //Atributs
     private double radio;
     
+    public static final double RADIO_VALUE=1.0;
+    
     //</editor-fold>   
     
     //<editor-fold defaultstate="collapsed" desc="Mètodes">
@@ -27,6 +29,9 @@ public class Esfera {
         public Esfera(double radio){
             this.setRadio(radio);
 
+        }
+        public Esfera(){
+            this(RADIO_VALUE);
         }
         //</editor-fold>
 

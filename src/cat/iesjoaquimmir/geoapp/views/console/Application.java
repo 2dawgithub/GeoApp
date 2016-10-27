@@ -35,7 +35,7 @@ public class Application {
         int tipusColor;
         
         do {
-            System.out.printf("Introdueix una figura(0: Sortir, 1: Rectangle, 2: Square, 3: Cercle, 4: Sphere, 5: Rectangle 1 costat, 6: Color): ");
+            System.out.printf("Introdueix una figura(0: Sortir, 1: Rectangle, 2: Square, 3: Cercle, 4: Sphere, 5: Rectangle 1 costat, 6: Color, 7: Totes les figures): ");
             n = teclat.nextInt();
                         
             if(n==1){
@@ -71,8 +71,10 @@ public class Application {
                 }
                 
                 
+            }else if(n==7){
+                figures();
             }
-        }while(n>0 && n<7);
+        }while(n>0 && n<8);
         
         
     }
@@ -205,4 +207,28 @@ public class Application {
         System.out.printf("\nColor aleatori en hexadecimal: %s\n", color1.toHexString());
     }
     
+    public static void figures(){
+        Cercle figuraCercle = new Cercle();
+        Esfera figuraEsfera = new Esfera();
+        Rectangle figuraRectangle = new Rectangle();
+        Square figuraSquare = new Square();
+        
+        System.out.printf("\nEl costat 1 de la figura cercle: %.2f %n", figuraCercle.getRadio());
+        System.out.printf("L'Area de la figura cercle: %.2f %n", figuraCercle.getArea());
+        System.out.printf("El perimetre de la figura cercle: %.2f %n \n", figuraCercle.getPerimeter());
+        
+        System.out.printf("El costat 1 de la figura esfera: %.2f %n", figuraEsfera.getRadio());
+        System.out.printf("L'Area de la figura esfera: %.2f %n", figuraEsfera.getArea());
+        System.out.printf("El perimetre de la figura esfera: %.2f %n \n", figuraEsfera.getPerimeter());
+        
+        System.out.printf("El costat 1 de la figura rectangle: %.2f %n", figuraRectangle.getLado1());
+        System.out.printf("El costat 2 de la figura rectangle: %.2f %n", figuraRectangle.getLado2());
+        System.out.printf("L'Area de la figura rectangle: %.2f %n", figuraRectangle.getArea());
+        System.out.printf("El perimetre de la figura rectangle: %.2f %n \n", figuraRectangle.getPerimeter());
+        
+        System.out.printf("El costat de la figura square: %.2f %n", figuraSquare.getSide());
+        System.out.printf("L'Area de la figura square: %.2f %n", figuraSquare.getArea());
+        System.out.printf("El perimetre de la figura square: %.2f %n \n", figuraSquare.getPerimeter());
+        
+    }
 }

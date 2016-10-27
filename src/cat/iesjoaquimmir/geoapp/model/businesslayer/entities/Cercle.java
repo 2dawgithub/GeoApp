@@ -15,6 +15,8 @@ public class Cercle {
     //Atributs
     private double radio;
     
+    public static final double RADIO_VALUE=1.0;
+    
     //</editor-fold>    
     
     //<editor-fold defaultstate="collapsed" desc="Metodes">
@@ -27,6 +29,10 @@ public class Cercle {
         public Cercle(double radio){
             this.setRadio(radio);
 
+        }
+        
+        public Cercle(){
+            this(RADIO_VALUE);
         }
         //</editor-fold>    
     
