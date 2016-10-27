@@ -70,6 +70,8 @@ public class Application {
                     colorAleatori();
                 }
                 
+                System.out.printf("\nColors creats: %d \n", Color.getCounter());
+                
                 
             }else if(n==7){
                 figures();
@@ -196,6 +198,7 @@ public class Application {
         
         System.out.printf("\nColor en hexadecimal: %s\n", color1.toRGBString(true));
         System.out.printf("\nColor en hexadecimal: %s\n", color1.toRGBString());
+        
     }
     
     public static void colorAleatori(){

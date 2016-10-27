@@ -22,6 +22,7 @@ public class Color {
         //atributs estàtics(constants)
         public static final int MAX_VALUE=255;
         public static final int MIN_VALUE=0;
+        private static int counter=0;
     //</editor-fold>
         
     //<editor-fold defaultstate="collapsed" desc="Mètodes">
@@ -87,6 +88,7 @@ public class Color {
         //<editor-fold defaultstate="collapsed" desc="Constructors">
         
         public Color(int red, int green, int blue){
+            counter++;
             this.setRed(red);
             this.setGreen(green);
             this.setBlue(blue);
@@ -126,6 +128,10 @@ public class Color {
         
         public String toRGBString(){
             return toRGBString(false);
+        }
+        
+        public static int getCounter(){
+            return counter;
         }
         
         //</editor-fold>

@@ -13,9 +13,9 @@ public class Rectangle {
     //<editor-fold defaultstate="collapsed" desc="Atributs">
     
     private double lado1;
-    private double lado2 = 1.0;
+    private double lado2;
     
-    public static final double LADO1_VALUE=1.0;
+    public static final double LADO2_VALUE=1.0;
     
     //</editor-fold>
     
@@ -30,12 +30,11 @@ public class Rectangle {
             this.setLado2(lado2);
         }
         public Rectangle(double lado1){
-            this.setLado1(lado1);
-
+            this(lado1, LADO2_VALUE);
         }
         
         public Rectangle(){
-            this(LADO1_VALUE);
+            this(LADO2_VALUE);
         }
 
         //</editor-fold>
