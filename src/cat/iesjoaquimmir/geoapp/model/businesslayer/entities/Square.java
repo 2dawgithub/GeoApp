@@ -9,7 +9,7 @@ package cat.iesjoaquimmir.geoapp.model.businesslayer.entities;
  *
  * @author alumne
  */
-public class Square {
+public class Square extends Shape  {
 //<editor-fold defaultstate="collapsed" desc="Atributs">
     //fcom + tabulacion para ^
     
@@ -17,17 +17,30 @@ public class Square {
     
     public static final double SIDE_VALUE=1.0;
     
+    
 //</editor-fold>
 
 //<editor-fold defaultstate="collapsed" desc="Comportament: Mètodes">
    
     //<editor-fold defaultstate="collapsed" desc="Constructores">
-        public Square(double side){
+        
+        public Square(double side, Color backgroundColor, Color foregroundColor){
             this.setSide(side);
+            this.setBackgroundColor(backgroundColor);
+            this.setForegroundColor(foregroundColor);
+        }
+        public Square(double side){
+               this(side, 
+                    new Color(Color.MAX_VALUE, Color.MAX_VALUE, Color.MAX_VALUE), 
+                    new Color(Color.MIN_VALUE, Color.MIN_VALUE, Color.MIN_VALUE) );
         }
         public Square(){
-            this(SIDE_VALUE);
+            this(SIDE_VALUE, 
+                new Color(Color.MAX_VALUE, Color.MAX_VALUE, Color.MAX_VALUE), 
+                new Color(Color.MIN_VALUE, Color.MIN_VALUE, Color.MIN_VALUE) );
         }
+        
+        
     //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="getters/setters">
@@ -48,17 +61,20 @@ public class Square {
             }
             this.side = side;
         }
+        
+              
+        
+        
     //</editor-fold>
-
-//</editor-fold> 
     
-//<editor-fold defaultstate="collapsed" desc="Operacions d'objecte">
+    //<editor-fold defaultstate="collapsed" desc="Operacions d'objecte">
     public double getArea(){
         return Math.pow(getSide(), 2);
     }
     public double getPerimeter(){
         return getSide() *4;
     }
-//</editor-fold>
+    //</editor-fold>
+//</editor-fold> 
 
 }

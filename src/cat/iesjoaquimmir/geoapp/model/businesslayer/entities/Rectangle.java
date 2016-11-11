@@ -9,12 +9,12 @@ package cat.iesjoaquimmir.geoapp.model.businesslayer.entities;
  *
  * @author alumne
  */
-public class Rectangle {
+public class Rectangle extends Shape  {
     //<editor-fold defaultstate="collapsed" desc="Atributs">
     
     private double lado1;
     private double lado2;
-    
+
     public static final double LADO2_VALUE=1.0;
     
     //</editor-fold>
@@ -25,9 +25,17 @@ public class Rectangle {
         //<editor-fold defaultstate="collapsed" desc="constructores">
 
         //constructores
-        public Rectangle(double lado1, double lado2){
+        public Rectangle(double lado1, double lado2, Color backgroundColor, Color foregroundColor){
             this.setLado1(lado1);
             this.setLado2(lado2);
+            this.setBackgroundColor(backgroundColor);
+            this.setForegroundColor(foregroundColor);
+        }
+        public Rectangle(double lado1, double lado2){
+            this(lado1, 
+                lado2,
+                new Color(Color.MAX_VALUE, Color.MAX_VALUE, Color.MAX_VALUE), 
+                new Color(Color.MIN_VALUE, Color.MIN_VALUE, Color.MIN_VALUE) );
         }
         public Rectangle(double lado1){
             this(lado1, LADO2_VALUE);
@@ -67,6 +75,10 @@ public class Rectangle {
             }
             this.lado2 = ladodos;
         }
+        
+        
+        
+        
         //</editor-fold>
 
         //<editor-fold defaultstate="collapsed" desc="operacions d'objecte">

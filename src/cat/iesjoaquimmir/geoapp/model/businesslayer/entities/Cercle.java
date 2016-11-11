@@ -9,11 +9,12 @@ package cat.iesjoaquimmir.geoapp.model.businesslayer.entities;
  *
  * @author alumne
  */
-public class Cercle {
+public class Cercle extends Shape {
     //<editor-fold defaultstate="collapsed" desc="Atributs">
     
     //Atributs
     private double radio;
+
     
     public static final double RADIO_VALUE=1.0;
     
@@ -26,13 +27,21 @@ public class Cercle {
     
 
         //constructores
-        public Cercle(double radio){
+        public Cercle(double radio, Color backgroundColor, Color foregroundColor){
             this.setRadio(radio);
-
+            this.setBackgroundColor(backgroundColor);
+            this.setForegroundColor(foregroundColor);
         }
         
+        public Cercle(double radio){
+            this(radio,
+                    new Color(Color.MAX_VALUE, Color.MAX_VALUE, Color.MAX_VALUE), 
+                    new Color(Color.MIN_VALUE, Color.MIN_VALUE, Color.MIN_VALUE));
+        }
         public Cercle(){
-            this(RADIO_VALUE);
+            this(RADIO_VALUE, 
+                    new Color(Color.MAX_VALUE, Color.MAX_VALUE, Color.MAX_VALUE), 
+                    new Color(Color.MIN_VALUE, Color.MIN_VALUE, Color.MIN_VALUE));
         }
         //</editor-fold>    
     
@@ -52,7 +61,8 @@ public class Cercle {
             }
             this.radio = radio;
         }
-
+        
+        
         //</editor-fold>
 
         //<editor-fold defaultstate="collapsed" desc="operacions d'objecte">

@@ -9,11 +9,12 @@ package cat.iesjoaquimmir.geoapp.model.businesslayer.entities;
  *
  * @author alumne
  */
-public class Esfera {
+public class Esfera extends Shape  {
     //<editor-fold defaultstate="collapsed" desc="Atributs">
    
     //Atributs
     private double radio;
+    
     
     public static final double RADIO_VALUE=1.0;
     
@@ -26,12 +27,22 @@ public class Esfera {
 
 
         //constructores
-        public Esfera(double radio){
+        public Esfera(double radio, Color backgroundColor, Color foregroundColor){
             this.setRadio(radio);
+            this.setBackgroundColor(backgroundColor);
+            this.setForegroundColor(foregroundColor);
+        }
+    
+        public Esfera(double radio){
+            this(radio, 
+                    new Color(Color.MAX_VALUE, Color.MAX_VALUE, Color.MAX_VALUE), 
+                    new Color(Color.MIN_VALUE, Color.MIN_VALUE, Color.MIN_VALUE));
 
         }
         public Esfera(){
-            this(RADIO_VALUE);
+            this(RADIO_VALUE, 
+                    new Color(Color.MAX_VALUE, Color.MAX_VALUE, Color.MAX_VALUE), 
+                    new Color(Color.MIN_VALUE, Color.MIN_VALUE, Color.MIN_VALUE));
         }
         //</editor-fold>
 
@@ -51,6 +62,9 @@ public class Esfera {
             }
             this.radio = radio;
         }
+        
+        
+        
         //</editor-fold>
 
         //<editor-fold defaultstate="collapsed" desc="operacions d'objecte">
