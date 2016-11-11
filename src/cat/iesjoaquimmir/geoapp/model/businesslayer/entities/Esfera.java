@@ -28,9 +28,8 @@ public class Esfera extends Shape  {
 
         //constructores
         public Esfera(double radio, Color backgroundColor, Color foregroundColor){
+            super(backgroundColor, foregroundColor);
             this.setRadio(radio);
-            this.setBackgroundColor(backgroundColor);
-            this.setForegroundColor(foregroundColor);
         }
     
         public Esfera(double radio){

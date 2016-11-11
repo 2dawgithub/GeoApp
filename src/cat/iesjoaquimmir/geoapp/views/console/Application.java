@@ -100,7 +100,8 @@ public class Application {
         System.out.printf("El costat 2 de r1: %.2f %n", r1.getLado2());
         System.out.printf("L'Area de r1: %.2f %n", r1.getArea());
         System.out.printf("El perimetre de r1: %.2f %n", r1.getPerimeter());
-        
+        System.out.printf("El color de fons en hexadecimal de r1: %s %n", r1.getBackgroundColor().toHexString() );
+        System.out.printf("El color de línia en hexadecimal de r1: %s %n", r1.getForegroundColor().toHexString() );
         
         
         System.out.printf("Introdueix el costat 1: ");
@@ -125,6 +126,8 @@ public class Application {
         System.out.printf("El costat 2 de r1: %.2f %n", r2.getLado2());
         System.out.printf("L'Area de r1: %.2f %n", r2.getArea());
         System.out.printf("El perimetre de r1: %.2f %n", r2.getPerimeter());
+        System.out.printf("El color de fons en hexadecimal de r2: %s %n", r2.getBackgroundColor().toHexString() );
+        System.out.printf("El color de línia en hexadecimal de r2: %s %n", r2.getForegroundColor().toHexString() );
         
     }
     

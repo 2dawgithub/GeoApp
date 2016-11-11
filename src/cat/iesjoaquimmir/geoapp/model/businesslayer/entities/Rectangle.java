@@ -26,10 +26,9 @@ public class Rectangle extends Shape  {
 
         //constructores
         public Rectangle(double lado1, double lado2, Color backgroundColor, Color foregroundColor){
+            super(backgroundColor, foregroundColor);
             this.setLado1(lado1);
             this.setLado2(lado2);
-            this.setBackgroundColor(backgroundColor);
-            this.setForegroundColor(foregroundColor);
         }
         public Rectangle(double lado1, double lado2){
             this(lado1, 

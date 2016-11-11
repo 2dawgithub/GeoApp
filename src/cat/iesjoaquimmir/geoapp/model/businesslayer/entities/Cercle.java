@@ -28,9 +28,8 @@ public class Cercle extends Shape {
 
         //constructores
         public Cercle(double radio, Color backgroundColor, Color foregroundColor){
+            super(backgroundColor, foregroundColor);
             this.setRadio(radio);
-            this.setBackgroundColor(backgroundColor);
-            this.setForegroundColor(foregroundColor);
         }
         
         public Cercle(double radio){
