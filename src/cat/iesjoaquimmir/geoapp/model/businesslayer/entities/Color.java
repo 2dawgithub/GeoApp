@@ -99,7 +99,7 @@ public class Color {
         
         public static Color fromHexString(String color){
             if(color == null){
-                throw new NullPointerException("Es obligatori indicar una " + "cadena de text");
+                throw new NullPointerException("Es obligatori indicar una cadena de text");
             }
             if (!color.matches("^#[0-9A-Fa-f]{6}$")){
                 throw new IllegalArgumentException(String.format("El text %s no te format hexadecimal", color));

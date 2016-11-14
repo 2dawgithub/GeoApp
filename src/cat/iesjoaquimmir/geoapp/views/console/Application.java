@@ -1,6 +1,7 @@
 package cat.iesjoaquimmir.geoapp.views.console;
 
 
+import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.AlphaColor;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Cercle;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Color;
 import static cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Color.fromHexString;
@@ -35,7 +36,7 @@ public class Application {
         int tipusColor;
         
         do {
-            System.out.printf("Introdueix una figura(0: Sortir, 1: Rectangle, 2: Quadrat, 3: Cercle, 4: Sphere, 5: Rectangle 1 costat, 6: Color, 7: Totes les figures): ");
+            System.out.printf("Introdueix una figura(0: Sortir, 1: Rectangle, 2: Quadrat, 3: Cercle, 4: Sphere, 5: Rectangle 1 costat, 6: Color, 7: Totes les figures, 8: Color amb transparència): ");
             n = teclat.nextInt();
                         
             if(n==1){
@@ -75,8 +76,11 @@ public class Application {
                 
             }else if(n==7){
                 figures();
+            }else if(n==8){
+                ColorAlpha();
             }
-        }while(n>0 && n<8);
+            
+        }while(n>0 && n<9);
         
         
     }
@@ -376,6 +380,52 @@ public class Application {
         System.out.printf("El costat de la figura square: %.2f %n", figuraSquare.getSide());
         System.out.printf("L'Area de la figura square: %.2f %n", figuraSquare.getArea());
         System.out.printf("El perimetre de la figura square: %.2f %n \n", figuraSquare.getPerimeter());
+        
+    }
+    
+    public static void ColorAlpha(){
+        
+        int red, green, blue;
+        double alpha;
+        
+        Scanner teclat = new Scanner(System.in);
+        
+        System.out.printf("Introdueix el red: ");
+        red = teclat.nextInt();
+        
+        System.out.printf("Introdueix el green: ");
+        green = teclat.nextInt();
+        
+        System.out.printf("Introdueix el blue: ");
+        blue = teclat.nextInt();
+        
+        System.out.printf("Introdueix el nivell de transparència (0 completament opac, 1 completament transparent): ");
+        alpha = teclat.nextDouble();
+        
+        
+        System.out.printf("AlphaColor");
+        
+        AlphaColor color1 = new AlphaColor(red, green, blue, alpha);
+        
+        System.out.printf("\nEl Red: %d, el Green: %d, el Blue: %d, el nivell de transparència: %.2f \n", color1.getRed(), color1.getGreen(), color1.getBlue(), color1.getAlpha() );
+        
+        System.out.printf("\nColor en hexadecimal: %s\n", color1.toRGBString(true));
+        System.out.printf("\nColor en hexadecimal: %s\n", color1.toRGBString());
+        System.out.printf("\nColor en hexadecimal: %s\n", color1.toHexString(false));
+        System.out.printf("\nColor en hexadecimal: %s\n\n", color1.toHexString());
+        
+        
+        System.out.printf("AlphaColor sin alpha");
+        
+        AlphaColor color2 = new AlphaColor(red, green, blue);
+        
+        System.out.printf("\nEl Red: %d, el Green: %d, el Blue: %d, el nivell de transparència: %.2f \n", color2.getRed(), color2.getGreen(), color2.getBlue(), color2.getAlpha() );
+        
+        System.out.printf("\nColor en hexadecimal: %s\n", color2.toRGBString(true));
+        System.out.printf("\nColor en hexadecimal: %s\n", color2.toRGBString());
+        System.out.printf("\nColor en hexadecimal: %s\n", color2.toHexString(false));
+        System.out.printf("\nColor en hexadecimal: %s\n\n", color2.toHexString());
+        
         
     }
 }
