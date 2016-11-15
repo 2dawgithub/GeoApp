@@ -54,25 +54,28 @@ public class AlphaColor extends Color {
     //<editor-fold defaultstate="collapsed" desc="Sobreescritura">
     
     @Override
-    public String toHexString(boolean upper){
-        if(getAlpha() != 0.0){
-            return String.format(upper ? "#%02X%02X%02X ALPHA: %.2f" : "#%02x%02x%02x Alpha: %.2f", getRed(), getGreen(), getBlue(), getAlpha());
-        }else{
-            return String.format(upper ? "#%02X%02X%02X" : "#%02x%02x%02x", getRed(), getGreen(), getBlue());
-        }
+    public String toHexString(boolean upper) {
+        return String.format("%s i Alpha: %.2f", super.toHexString(upper), getAlpha()); 
     }
-    
+
     @Override
-    public String toRGBString(boolean upper){
-        if(getAlpha() != 0.0){
-            return String.format(upper ? "RGBA(%d, %d, %d, %.2f)" : "rgba(%d, %d, %d, %.2f)", getRed(), getGreen(), getBlue(), getAlpha());
-        }else{
-            return String.format(upper ? "RGB(%d,%d,%d)" : "rgb(%d,%d,%d)", getRed(), getGreen(), getBlue());
-        }
+    public String toHexString() {
+        return toHexString(true); 
+    }
+
+    @Override
+    public String toRGBString(boolean upper) {
+        return String.format("%s i Alpha: %.2f", super.toRGBString(upper), getAlpha()); 
+    }
+
+    @Override
+    public String toRGBString() {
+        return toRGBString(false); 
     }
     //</editor-fold>
     
     //</editor-fold>
+
 
     
     

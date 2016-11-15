@@ -33,8 +33,8 @@ public class Rectangle extends Shape  {
         public Rectangle(double lado1, double lado2){
             this(lado1, 
                 lado2,
-                new Color(Color.MAX_VALUE, Color.MAX_VALUE, Color.MAX_VALUE), 
-                new Color(Color.MIN_VALUE, Color.MIN_VALUE, Color.MIN_VALUE) );
+                new AlphaColor(Color.MAX_VALUE, Color.MAX_VALUE, Color.MAX_VALUE), 
+                new AlphaColor(Color.MIN_VALUE, Color.MIN_VALUE, Color.MIN_VALUE) );
         }
         public Rectangle(double lado1){
             this(lado1, LADO2_VALUE);

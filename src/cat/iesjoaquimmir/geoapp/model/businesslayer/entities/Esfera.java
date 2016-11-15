@@ -34,14 +34,14 @@ public class Esfera extends Shape  {
     
         public Esfera(double radio){
             this(radio, 
-                    new Color(Color.MAX_VALUE, Color.MAX_VALUE, Color.MAX_VALUE), 
-                    new Color(Color.MIN_VALUE, Color.MIN_VALUE, Color.MIN_VALUE));
+                    new AlphaColor(Color.MAX_VALUE, Color.MAX_VALUE, Color.MAX_VALUE), 
+                    new AlphaColor(Color.MIN_VALUE, Color.MIN_VALUE, Color.MIN_VALUE));
 
         }
         public Esfera(){
             this(RADIO_VALUE, 
-                    new Color(Color.MAX_VALUE, Color.MAX_VALUE, Color.MAX_VALUE), 
-                    new Color(Color.MIN_VALUE, Color.MIN_VALUE, Color.MIN_VALUE));
+                    new AlphaColor(Color.MAX_VALUE, Color.MAX_VALUE, Color.MAX_VALUE), 
+                    new AlphaColor(Color.MIN_VALUE, Color.MIN_VALUE, Color.MIN_VALUE));
         }
         //</editor-fold>
 

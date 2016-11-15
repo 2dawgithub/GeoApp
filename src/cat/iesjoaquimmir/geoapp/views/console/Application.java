@@ -3,7 +3,6 @@ package cat.iesjoaquimmir.geoapp.views.console;
 
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.AlphaColor;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Cercle;
-import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Color;
 import static cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Color.fromHexString;
 import static cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Color.getRandom;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Esfera;
@@ -71,7 +70,7 @@ public class Application {
                     colorAleatori();
                 }
                 
-                System.out.printf("\nColors creats: %d \n", Color.getCounter());
+                System.out.printf("\nColors creats: %d \n", AlphaColor.getCounter());
                 
                 
             }else if(n==7){
@@ -120,8 +119,8 @@ public class Application {
         colorFG = teclat.next();
         
         
-        Color backgroundColor = fromHexString(colorBG);
-        Color foregroundColor = fromHexString(colorFG);
+        AlphaColor backgroundColor = fromHexString(colorBG);
+        AlphaColor foregroundColor = fromHexString(colorFG);
         
         
         Rectangle r2 = new Rectangle(lado1, lado2, backgroundColor, foregroundColor);
@@ -165,8 +164,8 @@ public class Application {
         colorFG = teclat.next();
         
         
-        Color backgroundColor = fromHexString(colorBG);
-        Color foregroundColor = fromHexString(colorFG);
+        AlphaColor backgroundColor = fromHexString(colorBG);
+        AlphaColor foregroundColor = fromHexString(colorFG);
         
         
         Square c2 = new Square(lado, backgroundColor, foregroundColor);
@@ -209,8 +208,8 @@ public class Application {
         colorFG = teclat.next();
         
         
-        Color backgroundColor = fromHexString(colorBG);
-        Color foregroundColor = fromHexString(colorFG);
+        AlphaColor backgroundColor = fromHexString(colorBG);
+        AlphaColor foregroundColor = fromHexString(colorFG);
         
         Cercle cercle2 = new Cercle(radio, backgroundColor, foregroundColor);
         
@@ -251,8 +250,8 @@ public class Application {
         colorFG = teclat.next();
         
         
-        Color backgroundColor = fromHexString(colorBG);
-        Color foregroundColor = fromHexString(colorFG);
+        AlphaColor backgroundColor = fromHexString(colorBG);
+        AlphaColor foregroundColor = fromHexString(colorFG);
         
         Esfera esfera2 = new Esfera(radio, backgroundColor, foregroundColor);
         
@@ -296,8 +295,8 @@ public class Application {
         colorFG = teclat.next();
         
         
-        Color backgroundColor = fromHexString(colorBG);
-        Color foregroundColor = fromHexString(colorFG);
+        AlphaColor backgroundColor = fromHexString(colorBG);
+        AlphaColor foregroundColor = fromHexString(colorFG);
         
         //acabar
         Rectangle r2 = new Rectangle(lado1);
@@ -325,7 +324,7 @@ public class Application {
         System.out.printf("Introdueix el blue: ");
         blue = teclat.nextInt();
         
-        Color color1 = new Color(red, green, blue);
+        AlphaColor color1 = new AlphaColor(red, green, blue);
         
         System.out.printf("\nEl Red: %d, el Green: %d, el Blue: %d \n", color1.getRed(), color1.getGreen(), color1.getBlue() );
         
@@ -340,7 +339,7 @@ public class Application {
         System.out.printf("Introdueix el color en hexadecimal: ");
         colorHexadecimal = teclat.nextLine();
         
-        Color color1 = fromHexString(colorHexadecimal);
+        AlphaColor color1 = fromHexString(colorHexadecimal);
         
         System.out.printf("\nEl Red: %d, el Green: %d, el Blue: %d \n", color1.getRed(), color1.getGreen(), color1.getBlue() );
         
@@ -350,7 +349,7 @@ public class Application {
     }
     
     public static void colorAleatori(){
-        Color color1 = getRandom();
+        AlphaColor color1 = getRandom();
         
         System.out.printf("\nRed: %d, Green: %d, Blue: %d \n", color1.getRed(), color1.getGreen(), color1.getBlue() );
         

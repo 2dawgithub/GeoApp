@@ -34,13 +34,13 @@ public class Cercle extends Shape {
         
         public Cercle(double radio){
             this(radio,
-                    new Color(Color.MAX_VALUE, Color.MAX_VALUE, Color.MAX_VALUE), 
-                    new Color(Color.MIN_VALUE, Color.MIN_VALUE, Color.MIN_VALUE));
+                    new AlphaColor(Color.MAX_VALUE, Color.MAX_VALUE, Color.MAX_VALUE), 
+                    new AlphaColor(Color.MIN_VALUE, Color.MIN_VALUE, Color.MIN_VALUE));
         }
         public Cercle(){
             this(RADIO_VALUE, 
-                    new Color(Color.MAX_VALUE, Color.MAX_VALUE, Color.MAX_VALUE), 
-                    new Color(Color.MIN_VALUE, Color.MIN_VALUE, Color.MIN_VALUE));
+                    new AlphaColor(Color.MAX_VALUE, Color.MAX_VALUE, Color.MAX_VALUE), 
+                    new AlphaColor(Color.MIN_VALUE, Color.MIN_VALUE, Color.MIN_VALUE));
         }
         //</editor-fold>    
     
