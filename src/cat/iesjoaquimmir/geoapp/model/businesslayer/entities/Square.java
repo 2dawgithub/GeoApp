@@ -24,7 +24,7 @@ public class Square extends Shape  {
    
     //<editor-fold defaultstate="collapsed" desc="Constructores">
         
-        public Square(double side, Color backgroundColor, Color foregroundColor){
+        public Square(double side, AlphaColor backgroundColor, AlphaColor foregroundColor){
             super(backgroundColor, foregroundColor);
             this.setSide(side);
             
@@ -73,6 +73,13 @@ public class Square extends Shape  {
     }
     public double getPerimeter(){
         return getSide() *4;
+    }
+    //</editor-fold>
+    
+    //<editor-fold defaultstate="collapsed" desc="Sobreescritura">
+    @Override
+    public String toString() {
+        return String.format("El costat: %.2f \n L'Area: %.2f\n El perimetre: %.2f %s \n", getSide(), getArea(), getPerimeter(), super.toString() );
     }
     //</editor-fold>
 //</editor-fold> 

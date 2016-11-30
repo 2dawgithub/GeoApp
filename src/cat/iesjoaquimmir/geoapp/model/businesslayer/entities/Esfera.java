@@ -27,7 +27,7 @@ public class Esfera extends Shape  {
 
 
         //constructores
-        public Esfera(double radio, Color backgroundColor, Color foregroundColor){
+        public Esfera(double radio, AlphaColor backgroundColor, AlphaColor foregroundColor){
             super(backgroundColor, foregroundColor);
             this.setRadio(radio);
         }
@@ -76,6 +76,13 @@ public class Esfera extends Shape  {
         public double getPerimeter(){
             return 2 * Math.PI * getRadio();
 
+        }
+        //</editor-fold>
+        
+        //<editor-fold defaultstate="collapsed" desc="Sobreescritura">
+        @Override
+        public String toString() {
+            return String.format("El radio: %.2f %n L'Area: %.2f %n El perimetre: %.2f %n El color de fons en hexadecimal: %s %n El color de línia en hexadecimal: %s %n", getRadio(), getArea(), getPerimeter(), getBackgroundColor().toHexString(), getForegroundColor().toHexString() );
         }
         //</editor-fold>
     //</editor-fold>  

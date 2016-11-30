@@ -72,6 +72,7 @@ public class AlphaColor extends Color {
     public String toRGBString() {
         return toRGBString(false); 
     }
+    
     //</editor-fold>
     
     //</editor-fold>

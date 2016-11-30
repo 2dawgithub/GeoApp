@@ -62,12 +62,18 @@ public class Application {
                 
                 tipusColor = teclat.nextInt();
                 
-                if(tipusColor==1){
-                    color();
-                }else if(tipusColor==2){
-                    colorHex();
-                }else if(tipusColor==3){
-                    colorAleatori();
+                switch (tipusColor) {
+                    case 1:
+                        color();
+                        break;
+                    case 2:
+                        colorHex();
+                        break;
+                    case 3:
+                        colorAleatori();
+                        break;
+                    default:
+                        break;
                 }
                 
                 System.out.printf("\nColors creats: %d \n", AlphaColor.getCounter());
@@ -98,15 +104,9 @@ public class Application {
         
         Rectangle r1 = new Rectangle(lado1, lado2);
         
+        System.out.printf( r1.toString() );
         
-        System.out.printf("El costat 1 de r1: %.2f %n", r1.getLado1());
-        System.out.printf("El costat 2 de r1: %.2f %n", r1.getLado2());
-        System.out.printf("L'Area de r1: %.2f %n", r1.getArea());
-        System.out.printf("El perimetre de r1: %.2f %n", r1.getPerimeter());
-        System.out.printf("El color de fons en hexadecimal de r1: %s %n", r1.getBackgroundColor().toHexString() );
-        System.out.printf("El color de línia en hexadecimal de r1: %s %n", r1.getForegroundColor().toHexString() );
-        
-        
+                
         System.out.printf("Introdueix el costat 1: ");
         lado1 = teclat.nextDouble();
         System.out.printf("Introdueix el costat 2: ");
@@ -125,12 +125,7 @@ public class Application {
         
         Rectangle r2 = new Rectangle(lado1, lado2, backgroundColor, foregroundColor);
         
-        System.out.printf("El costat 1 de r1: %.2f %n", r2.getLado1());
-        System.out.printf("El costat 2 de r1: %.2f %n", r2.getLado2());
-        System.out.printf("L'Area de r1: %.2f %n", r2.getArea());
-        System.out.printf("El perimetre de r1: %.2f %n", r2.getPerimeter());
-        System.out.printf("El color de fons en hexadecimal de r2: %s %n", r2.getBackgroundColor().toHexString() );
-        System.out.printf("El color de línia en hexadecimal de r2: %s %n", r2.getForegroundColor().toHexString() );
+        System.out.printf( r2.toString() );
         
     }
     
@@ -147,11 +142,7 @@ public class Application {
         
         Square c1 = new Square(lado);
         
-        System.out.printf("El costat de c1: %.2f %n", c1.getSide());
-        System.out.printf("L'Area de c1: %.2f %n", c1.getArea());
-        System.out.printf("El perimetre de c1: %.2f %n", c1.getPerimeter());
-        System.out.printf("El color de fons en hexadecimal de c1: %s %n", c1.getBackgroundColor().toHexString() );
-        System.out.printf("El color de línia en hexadecimal de c1: %s %n", c1.getForegroundColor().toHexString() );
+        System.out.printf( c1.toString() );
         
         
         System.out.printf("\nIntrodueix un costat: ");
@@ -170,12 +161,7 @@ public class Application {
         
         Square c2 = new Square(lado, backgroundColor, foregroundColor);
         
-        System.out.printf("El costat de c2: %.2f %n", c2.getSide());
-        System.out.printf("L'Area de c2: %.2f %n", c2.getArea());
-        System.out.printf("El perimetre de c2: %.2f %n", c2.getPerimeter());
-        System.out.printf("El color de fons en hexadecimal de c1: %s %n", c2.getBackgroundColor().toHexString() );
-        System.out.printf("El color de línia en hexadecimal de c1: %s %n", c2.getForegroundColor().toHexString() );
-        
+        System.out.printf( c2.toString() );
     }
     public static void cercle(){
         
@@ -190,12 +176,7 @@ public class Application {
 
         Cercle cercle1 = new Cercle(radio);
         
-        System.out.printf("\nEl costat 1 de cercle1: %.2f %n", cercle1.getRadio());
-        System.out.printf("L'Area de cercle1: %.2f %n", cercle1.getArea());
-        System.out.printf("El perimetre de cercle1: %.2f %n", cercle1.getPerimeter());
-        System.out.printf("El color de fons en hexadecimal de cercle1: %s %n", cercle1.getBackgroundColor().toHexString() );
-        System.out.printf("El color de línia en hexadecimal de cercle1: %s %n", cercle1.getForegroundColor().toHexString() );
-        
+        System.out.printf( cercle1.toString() );
         
         
         System.out.printf("\n\nIntrodueix el radi: ");
@@ -213,12 +194,7 @@ public class Application {
         
         Cercle cercle2 = new Cercle(radio, backgroundColor, foregroundColor);
         
-        System.out.printf("\nEl costat 1 de cercle2: %.2f %n", cercle2.getRadio());
-        System.out.printf("L'Area de cercle2: %.2f %n", cercle2.getArea());
-        System.out.printf("El perimetre de cercle2: %.2f %n", cercle2.getPerimeter());
-        System.out.printf("El color de fons en hexadecimal de cercle2: %s %n", cercle2.getBackgroundColor().toHexString() );
-        System.out.printf("El color de línia en hexadecimal de cercle2: %s %n", cercle2.getForegroundColor().toHexString() );
-        
+        System.out.printf( cercle2.toString() );
         
     }
     public static void sphere(){
@@ -233,11 +209,7 @@ public class Application {
         radio = teclat.nextDouble();
         Esfera esfera1 = new Esfera(radio);
         
-        System.out.printf("\nEl costat 1 de esfera1: %.2f %n", esfera1.getRadio());
-        System.out.printf("L'Area de esfera1: %.2f %n", esfera1.getArea());
-        System.out.printf("El perimetre de esfera1: %.2f %n", esfera1.getPerimeter());
-        System.out.printf("El color de fons en hexadecimal de esfera1: %s %n", esfera1.getBackgroundColor().toHexString() );
-        System.out.printf("El color de línia en hexadecimal de esfera1: %s %n", esfera1.getForegroundColor().toHexString() );
+        System.out.printf( esfera1.toString() );
         
         
         System.out.printf("\n\nIntrodueix el radi: ");
@@ -255,12 +227,7 @@ public class Application {
         
         Esfera esfera2 = new Esfera(radio, backgroundColor, foregroundColor);
         
-        System.out.printf("\nEl costat 1 de esfera2: %.2f %n", esfera2.getRadio());
-        System.out.printf("L'Area de esfera2: %.2f %n", esfera2.getArea());
-        System.out.printf("El perimetre de esfera2: %.2f %n", esfera2.getPerimeter());
-        System.out.printf("El color de fons en hexadecimal de esfera2: %s %n", esfera2.getBackgroundColor().toHexString() );
-        System.out.printf("El color de línia en hexadecimal de esfera2: %s %n", esfera2.getForegroundColor().toHexString() );
-        
+        System.out.printf( esfera2.toString() );
         
     }
     
@@ -277,12 +244,7 @@ public class Application {
         
         Rectangle r1 = new Rectangle(lado1);
         
-        System.out.printf("El costat 1 de r1: %.2f %n", r1.getLado1());
-        System.out.printf("El costat 2 de r1: %.2f %n", r1.getLado2());
-        System.out.printf("L'Area de r1: %.2f %n", r1.getArea());
-        System.out.printf("El perimetre de r1: %.2f %n", r1.getPerimeter());
-        System.out.printf("El color de fons en hexadecimal de esfera2: %s %n", r1.getBackgroundColor().toHexString() );
-        System.out.printf("El color de línia en hexadecimal de esfera2: %s %n", r1.getForegroundColor().toHexString() );
+        System.out.printf( r1.toString() );
         
         
         System.out.printf("Introdueix el costat 1: ");
@@ -298,16 +260,9 @@ public class Application {
         AlphaColor backgroundColor = fromHexString(colorBG);
         AlphaColor foregroundColor = fromHexString(colorFG);
         
-        //acabar
         Rectangle r2 = new Rectangle(lado1);
         
-        System.out.printf("El costat 1 de r1: %.2f %n", r2.getLado1());
-        System.out.printf("El costat 2 de r1: %.2f %n", r2.getLado2());
-        System.out.printf("L'Area de r1: %.2f %n", r2.getArea());
-        System.out.printf("El perimetre de r1: %.2f %n", r2.getPerimeter());
-        System.out.printf("El color de fons en hexadecimal de esfera2: %s %n", r2.getBackgroundColor().toHexString() );
-        System.out.printf("El color de línia en hexadecimal de esfera2: %s %n", r2.getForegroundColor().toHexString() );
-        
+        System.out.printf( r2.toString() );
     }
     
     public static void color(){
@@ -343,8 +298,8 @@ public class Application {
         
         System.out.printf("\nEl Red: %d, el Green: %d, el Blue: %d \n", color1.getRed(), color1.getGreen(), color1.getBlue() );
         
-        System.out.printf("\nColor en hexadecimal: %s\n", color1.toRGBString(true));
-        System.out.printf("\nColor en hexadecimal: %s\n", color1.toRGBString());
+        System.out.printf("\nColor en RGB: %s\n", color1.toRGBString(true));
+        System.out.printf("\nColor en RGB: %s\n", color1.toRGBString());
         
     }
     
@@ -363,23 +318,13 @@ public class Application {
         Rectangle figuraRectangle = new Rectangle();
         Square figuraSquare = new Square();
         
-        System.out.printf("\nEl costat 1 de la figura cercle: %.2f %n", figuraCercle.getRadio());
-        System.out.printf("L'Area de la figura cercle: %.2f %n", figuraCercle.getArea());
-        System.out.printf("El perimetre de la figura cercle: %.2f %n \n", figuraCercle.getPerimeter());
+        System.out.printf( figuraCercle.toString() );
         
-        System.out.printf("El costat 1 de la figura esfera: %.2f %n", figuraEsfera.getRadio());
-        System.out.printf("L'Area de la figura esfera: %.2f %n", figuraEsfera.getArea());
-        System.out.printf("El perimetre de la figura esfera: %.2f %n \n", figuraEsfera.getPerimeter());
+        System.out.printf( figuraEsfera.toString() );
         
-        System.out.printf("El costat 1 de la figura rectangle: %.2f %n", figuraRectangle.getLado1());
-        System.out.printf("El costat 2 de la figura rectangle: %.2f %n", figuraRectangle.getLado2());
-        System.out.printf("L'Area de la figura rectangle: %.2f %n", figuraRectangle.getArea());
-        System.out.printf("El perimetre de la figura rectangle: %.2f %n \n", figuraRectangle.getPerimeter());
-        
-        System.out.printf("El costat de la figura square: %.2f %n", figuraSquare.getSide());
-        System.out.printf("L'Area de la figura square: %.2f %n", figuraSquare.getArea());
-        System.out.printf("El perimetre de la figura square: %.2f %n \n", figuraSquare.getPerimeter());
-        
+        System.out.printf( figuraRectangle.toString() );
+
+        System.out.printf( figuraSquare.toString() );
     }
     
     public static void ColorAlpha(){
@@ -408,11 +353,7 @@ public class Application {
         
         System.out.printf("\nEl Red: %d, el Green: %d, el Blue: %d, el nivell de transparència: %.2f \n", color1.getRed(), color1.getGreen(), color1.getBlue(), color1.getAlpha() );
         
-        System.out.printf("\nColor en hexadecimal: %s\n", color1.toRGBString(true));
-        System.out.printf("\nColor en hexadecimal: %s\n", color1.toRGBString());
-        System.out.printf("\nColor en hexadecimal: %s\n", color1.toHexString(false));
-        System.out.printf("\nColor en hexadecimal: %s\n\n", color1.toHexString());
-        
+        System.out.printf( color1.toString() );
         
         System.out.printf("AlphaColor sin alpha");
         
@@ -420,11 +361,7 @@ public class Application {
         
         System.out.printf("\nEl Red: %d, el Green: %d, el Blue: %d, el nivell de transparència: %.2f \n", color2.getRed(), color2.getGreen(), color2.getBlue(), color2.getAlpha() );
         
-        System.out.printf("\nColor en hexadecimal: %s\n", color2.toRGBString(true));
-        System.out.printf("\nColor en hexadecimal: %s\n", color2.toRGBString());
-        System.out.printf("\nColor en hexadecimal: %s\n", color2.toHexString(false));
-        System.out.printf("\nColor en hexadecimal: %s\n\n", color2.toHexString());
-        
+        System.out.printf( color2.toString() );
         
     }
 }

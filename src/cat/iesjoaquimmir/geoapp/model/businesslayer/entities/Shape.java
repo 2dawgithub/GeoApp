@@ -11,15 +11,15 @@ package cat.iesjoaquimmir.geoapp.model.businesslayer.entities;
  */
 public abstract class Shape {
     //<editor-fold defaultstate="collapsed" desc="Atributs">
-    private Color backgroundColor;
-    private Color foregroundColor;
+    private AlphaColor backgroundColor;
+    private AlphaColor foregroundColor;
     private static int counter = 0;
     //</editor-fold>
     
     //<editor-fold defaultstate="collapsed" desc="metodes">
     
         //<editor-fold defaultstate="collapsed" desc="constructors">
-        public Shape(Color backgroundColor, Color foregroundColor){
+        public Shape(AlphaColor backgroundColor, AlphaColor foregroundColor){
             this.setBackgroundColor(backgroundColor);
             this.setForegroundColor(foregroundColor);
             counter++;
@@ -37,7 +37,7 @@ public abstract class Shape {
         /**
          * @param backgroundColor the backgroundColor to set
          */
-        public void setBackgroundColor(Color backgroundColor) {
+        public void setBackgroundColor(AlphaColor backgroundColor) {
             if(backgroundColor==null){
                 throw new NullPointerException("Es obligatori indicar un color");
             }
@@ -54,7 +54,7 @@ public abstract class Shape {
         /**
          * @param foregroundColor the foregroundColor to set
          */
-        public void setForegroundColor(Color foregroundColor) {
+        public void setForegroundColor(AlphaColor foregroundColor) {
             if(foregroundColor==null){
                 throw new NullPointerException("Es obligatori indicar un color");
             }
@@ -69,6 +69,15 @@ public abstract class Shape {
         }
         
         //</editor-fold>
+        
+        //<editor-fold defaultstate="collapsed" desc="Sobreescritura">
+        
+        //</editor-fold>
     
     //</editor-fold>
+
+    @Override
+    public String toString() {
+        return String.format(" El color de fons en hexadecimal: %s \n El color de línia en hexadecimal: %s \n", getBackgroundColor().toString(), getForegroundColor().toString() );
+    }
 }

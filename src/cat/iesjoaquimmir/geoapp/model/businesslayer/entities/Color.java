@@ -134,7 +134,18 @@ public abstract class Color {
         }
         
         //</editor-fold>
+        
+        //<editor-fold defaultstate="collapsed" desc="Sobreescritura">
+        
+        //</editor-fold>
             
     //</editor-fold>
+
+    @Override
+    public String toString() {
+        return String.format("\nColor en RGB: %s\n \nColor en hexadecimal: %s\n", toHexString(), toRGBString() );
+    }
+
+    
     
 }

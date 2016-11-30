@@ -25,7 +25,7 @@ public class Rectangle extends Shape  {
         //<editor-fold defaultstate="collapsed" desc="constructores">
 
         //constructores
-        public Rectangle(double lado1, double lado2, Color backgroundColor, Color foregroundColor){
+        public Rectangle(double lado1, double lado2, AlphaColor backgroundColor, AlphaColor foregroundColor){
             super(backgroundColor, foregroundColor);
             this.setLado1(lado1);
             this.setLado2(lado2);
@@ -91,5 +91,14 @@ public class Rectangle extends Shape  {
 
         }
         //</editor-fold>
+        
+        //<editor-fold defaultstate="collapsed" desc="Sobreescritura">
+        @Override
+        public String toString() {
+            return String.format("El costat 1: %.2f %n El costat 2: %.2f %n L'Area: %.2f %n El perimetre: %.2f %n El color de fons en hexadecimal: %s %n El color de línia en hexadecimal: %s %n", getLado1(), getLado2(), getArea(), getPerimeter(), getBackgroundColor().toHexString(), getForegroundColor().toHexString() );
+        }
+        //</editor-fold>
     //</editor-fold>
+
+    
 }
